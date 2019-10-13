@@ -13,7 +13,7 @@ def generate():
     cover_file = False
     if request.files.get('cover'):
         cover_file = tfile.NamedTemporaryFile(mode="w+", suffix=".html", prefix="cover")
-        cover_file.write(request.files.get('cover').stream.read().decode())
+        cover_file.write(request.files.get('cover').read().decode())
         cover_file.flush()
     
     cover = cover_file.name if cover_file else None
