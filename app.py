@@ -1,4 +1,4 @@
-from flask import Flask, request, send_file, make_response
+from flask import Flask, request, make_response
 import base64
 import pdfkit
 import tempfile as tfile
