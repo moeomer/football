@@ -13,12 +13,12 @@ def generate():
     cover_file = False
     if request.files.get('cover'):
         cover_file = tfile.NamedTemporaryFile(mode="w+", suffix=".html", prefix="cover")
-        cover_file.write(request.files.get('cover').read().decode())
+        cover_file.write(request.files.get('cover').read().decode("ISO-8859-1"))
         cover_file.flush()
     
     cover = cover_file.name if cover_file else None
     
-    pdf = pdfkit.PDFKit(request.files.get('file').read().decode(), 'string',
+    pdf = pdfkit.PDFKit(request.files.get('file').read().decode("ISO-8859-1"), 'string',
                         options=options, cover=cover, toc=toc, cover_first=True).to_pdf()
     
     response = make_response(pdf)
