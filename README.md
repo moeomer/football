@@ -23,4 +23,5 @@ A Docker image for converting HTML to PDF using wkhtmltopdf
 ## TODO
 - [ ] Input validation
 - [ ] Avoid writing `cover` to temp file
+- [ ] Use a production server instead of Flask's dev server
 - [ ] More pythonic code :rocket:
